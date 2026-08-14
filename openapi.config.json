@@ -1,0 +1,30 @@
+{
+  "schemaRegistryApiUrl": "https://apicurio.apps.cluster-mzb5l.dyn.redhatworkshops.io/apis/registry/v3",
+  "provided": {
+    "name": "productpage",
+    "groupId": "io.github.cfidp.bookinfo",
+    "artifactId": "productpage",
+    "version": "latest",
+    "contractFile": "productpage-api.yaml"
+  },
+  "consumed": [
+    {
+      "name": "reviews",
+      "alias": "default-reviews",
+      "groupId": "io.github.cfidp.bookinfo",
+      "artifactId": "reviews",
+      "version": "latest",
+      "contractFile": "default-reviews-api.yaml",
+      "defaultBaseUrl": "http://reviews:8080"
+    },
+    {
+      "name": "details",
+      "alias": "default-details",
+      "groupId": "io.github.cfidp.bookinfo",
+      "artifactId": "details",
+      "version": "v1.0.0",
+      "contractFile": "default-details-api.yaml",
+      "defaultBaseUrl": "http://details:8080"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: productpage
+  title: productpage
+  description: Product Page Service
+  annotations:
+    backstage.io/kubernetes-id: productpage
+    contract-first-idp.github.io/scm-provider: github
+    contract-first-idp.github.io/scm-host: github.com
+    contract-first-idp.github.io/domain-org: contract-first-idp-test
+    contract-first-idp.github.io/domain-repo: customer-experience-domain
+    contract-first-idp.github.io/repository-name: bookinfo-productpage-service
+    contract-first-idp.github.io/implementation-profile: nodejs-openapi
+spec:
+  type: service
+  lifecycle: production
+  owner: group:default/domain-maintainers
+  system: system:default/bookinfo
+  providesApis:
+    - api:default/productpage
+  consumesApis:
+    - api:default/reviews
+    - api:default/details
